@@ -4,13 +4,12 @@
 
 export const environment = {
   production: false,
-  region: 'us-east-1',
-  userPoolId: 'us-east-1_qaTBnal34',
-  userPoolWebClientId: '4tf9862edqa02kldak6kqt11sh',
-  apiRekognition: 'https://4m29isnkue.execute-api.us-east-1.amazonaws.com/Prod/',
-  apiKey: 'DbjlUVqFjV7pC8uBBzzNW1TcfCWZ01983kH8d1yN',
-  //livenessApiServer: "http://localhost:5000/",
-  apiLivenessDetect: 'http://192.168.0.19:5001',
+  region: '',
+  userPoolId: '',
+  userPoolWebClientId: '',
+  apiRekognition: '',
+  apiKey: '',
+  apiLivenessDetect: '',
   livenessUpdateInterval: 10
 };
 
