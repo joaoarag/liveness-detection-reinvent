@@ -1,0 +1,10 @@
+[
+  {
+    "ParameterKey": "UserPoolName",
+    "ParameterValue": "LivenessDetectionUserPool"
+  }, 
+  {
+    "ParameterKey": "CollectionName",
+    "ParameterValue": "LivenessDetectionCollection"
+  }
+]
