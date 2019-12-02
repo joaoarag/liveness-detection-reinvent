@@ -1,0 +1,63 @@
+<!--
+   Copyright 2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+   SPDX-License-Identifier: MIT-0
+-->
+
+<mat-card fxFlex="1 1 100%" ngClass="app-card">
+
+  <mat-card-header>
+    <mat-icon mat-card-avatar>lock</mat-icon>
+    <mat-card-title>Liveness Detection</mat-card-title>
+    <mat-card-subtitle>{{ message | async }}</mat-card-subtitle>
+  </mat-card-header>
+
+  <!-- <mat-card-content>
+    <div fxFlex></div>
+    <button mat-button color="primary" (click)="startDetection()">
+      <div fxFlex></div>
+      <div>Start Detection</div>
+      <div fxFlex></div>
+    </button>
+    <button mat-button color="primary" (click)="stop()">
+      <div fxFlex></div>
+      <div>Stop Detection</div>
+      <div fxFlex></div>
+    </button>
+    <div fxFlex></div>
+  </mat-card-content> -->
+
+  <mat-card-content>
+    <div fxFlex></div>
+    <!-- <div id="progressbar"> -->
+        <!-- <div id="barvalue"></div> -->
+    <div>
+    <canvas #canvasDrawLiveness id="canvasDrawLiveness" width="320" height="180" style="display: block; position:absolute; top:1; left: 1; z-index: 10;"></canvas> 
+    <video #videoElementLiveness style="display:block; transform: scale(-1, 1); -webkit-transform: scale(-1, 1); z-index: 0;" autoplay id="videoElementLiveness" width="320"></video>
+    </div>
+    <div fxFlex></div>
+    <!-- <video #videoElementLiveness width="640" autoplay style="display:block"></video> -->
+  </mat-card-content>
+
+  <mat-card-content>
+    <div fxFlex></div>
+    <canvas #canvasLiveness id="canvasLiveness" width="320" height="180" style="display:none"></canvas>
+    <div fxFlex></div>
+  </mat-card-content>
+
+  <mat-card-actions>
+    <div fxFlex></div>
+    <button mat-stroked-button color="primary" (click)="startDetection()">
+      <div fxFlex></div>
+      <div *ngIf="!(busy | async)">START TEST</div>
+      <mat-spinner *ngIf="busy | async" [diameter]="35"></mat-spinner>
+      <div fxFlex></div>
+    </button>
+    <div fxFlex></div>
+  </mat-card-actions>
+  <p *ngIf="errorMessage | async">{{ errorMessage | async }}</p>
+<!--   <mat-card-content>
+    <div fxFlex></div>
+    <p>Back to <a routerLink='/sign-in' routerLinkActive="active" (click)="stop()">Sign in</a></p>
+  </mat-card-content> -->
+
+</mat-card>

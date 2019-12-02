@@ -1,0 +1,2 @@
+Execute with npm start run
+Then replace Auth.ts in folder /node-modules/@aws-amplify/auth/src/Auth.ts with the file in root folder

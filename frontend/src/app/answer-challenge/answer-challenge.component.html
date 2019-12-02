@@ -1,0 +1,49 @@
+<!--
+   Copyright 2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+   SPDX-License-Identifier: MIT-0
+-->
+
+<mat-card fxFlex="1 1 auto" ngClass="app-card">
+
+  <mat-card-header>
+    <mat-icon mat-card-avatar>lock</mat-icon>
+    <mat-card-title>Face Recognition</mat-card-title>
+    <mat-card-subtitle>{{ message | async }} </mat-card-subtitle>
+  </mat-card-header>
+
+<!--   <mat-card-content>
+    <div fxFlex></div>
+    <button mat-button color="primary" (click)="takeSnapshot()">
+      <div fxFlex></div>
+      <div>Take Snapshot</div>
+      <div fxFlex></div>
+    </button>
+    <div fxFlex></div>
+  </mat-card-content> -->
+
+  <mat-card-content>
+    <div fxFlex></div>
+    <video #videoElementFace width="320" autoplay style="display:block; transform: scale(-1, 1); -webkit-transform: scale(-1, 1);"></video>
+    <div fxFlex></div>
+  </mat-card-content>
+
+  <mat-card-content>
+    <div fxFlex></div>
+    <!-- <canvas #canvasFace id="canvasFace" width="320" height="240" style="display:none"></canvas> -->
+    <canvas #canvasFace id="canvasFace" width="320" height="180" style="display:none"></canvas>
+    <div fxFlex></div>
+  </mat-card-content>
+
+  <mat-card-actions>
+    <div fxFlex></div>
+    <button mat-stroked-button color="primary" (click)="takeSnapshot()">
+      <div fxFlex></div>
+      <div *ngIf="!(busy | async)">TAKE SNAPSHOT</div>
+      <mat-spinner *ngIf="busy | async" [diameter]="35"></mat-spinner>
+      <div fxFlex></div>
+    </button>
+    <div fxFlex></div>
+  </mat-card-actions>
+  <p *ngIf="errorMessage | async">{{ errorMessage | async }}</p>
+
+</mat-card>
